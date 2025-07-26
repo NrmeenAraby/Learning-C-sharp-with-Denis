@@ -18,6 +18,9 @@ namespace oldSchool
             Console.WriteLine("just sound");
 
         }
+        public virtual void SealedMethod() {
+            Console.WriteLine("to be Sealed method");    
+        }
     }
 
     class Dog:Animal
@@ -30,6 +33,17 @@ namespace oldSchool
         {
             Console.WriteLine("Barking...");
         }
+        public sealed override void SealedMethod()
+        {
+            Console.WriteLine("sealed method");
+        }
+    }
+    class cat : Animal {
+
+        public override void SealedMethod()
+        {
+            Console.WriteLine("sealed method");
+        }
     }
 
     class Collie : Dog { 
@@ -38,6 +52,18 @@ namespace oldSchool
         {
             Console.WriteLine("Collie going Nuts");
         }
+
+        //but here we can't override SealedMethod
+    }
+    class kitten : cat
+    {
+
+        public void GoingNuts()
+        {
+            Console.WriteLine("Collie going Nuts");
+        }
+        public override void SealedMethod() { }
+
     }
 
 }
