@@ -1,0 +1,14 @@
+D:\VSprograms\oldSchool\oldSchool\bin\Debug\net8.0\oldSchool.exe
+D:\VSprograms\oldSchool\oldSchool\bin\Debug\net8.0\oldSchool.deps.json
+D:\VSprograms\oldSchool\oldSchool\bin\Debug\net8.0\oldSchool.runtimeconfig.json
+D:\VSprograms\oldSchool\oldSchool\bin\Debug\net8.0\oldSchool.dll
+D:\VSprograms\oldSchool\oldSchool\bin\Debug\net8.0\oldSchool.pdb
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.GeneratedMSBuildEditorConfig.editorconfig
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.AssemblyInfoInputs.cache
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.AssemblyInfo.cs
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.csproj.CoreCompileInputs.cache
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.dll
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\refint\oldSchool.dll
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.pdb
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.genruntimeconfig.cache
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\ref\oldSchool.dll
