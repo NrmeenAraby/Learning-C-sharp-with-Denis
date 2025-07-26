@@ -277,37 +277,37 @@ namespace oldSchool
 
             //TRY, CATCH,CATCH,.. AND Finally
 
-             /*int result = 0;
-             try
-             {
-                 Console.WriteLine("Enter a num: ");
-                 int num1 = int.Parse(Console.ReadLine());
-                 int num2 = 10;
-                 result = num2 / num1;
-             }
-            catch (DivideByZeroException ex)
-             {
-                Console.WriteLine("Dont divide by ZERO!" + ex.Message);
-             }
-            catch (FormatException ex)
-             {
-                 Console.WriteLine("JUST NUMBERS ARE ALLOWED"+ex.Message);
-             }
-             catch (OverflowException ex)
-             {
-                 Console.WriteLine("Number out of the type bound!"+ex.Message);
-             }
-             catch (Exception ex) { 
-                Console.WriteLine("Error: "+ex.Message);
+            /*int result = 0;
+            try
+            {
+                Console.WriteLine("Enter a num: ");
+                int num1 = int.Parse(Console.ReadLine());
+                int num2 = 10;
+                result = num2 / num1;
+            }
+           catch (DivideByZeroException ex)
+            {
+               Console.WriteLine("Dont divide by ZERO!" + ex.Message);
+            }
+           catch (FormatException ex)
+            {
+                Console.WriteLine("JUST NUMBERS ARE ALLOWED"+ex.Message);
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine("Number out of the type bound!"+ex.Message);
+            }
+            catch (Exception ex) { 
+               Console.WriteLine("Error: "+ex.Message);
 
-                 //DEBUG
-                 Debug.WriteLine("DEBUGGGGGG"+ex.ToString);  //just executed i fwe r in debug not just bild mood
-             }
-             finally
-             {
-                 Console.WriteLine("This always executes no matter what");
-             }
-             Console.WriteLine("Result: " + result);*/
+                //DEBUG
+                Debug.WriteLine("DEBUGGGGGG"+ex.ToString);  //just executed i fwe r in debug not just bild mood
+            }
+            finally
+            {
+                Console.WriteLine("This always executes no matter what");
+            }
+            Console.WriteLine("Result: " + result);*/
 
             //THROW AN EXCEPTION
 
@@ -315,7 +315,7 @@ namespace oldSchool
             GetUserAge(Console.ReadLine());*/
 
             //EXCEPTIONS WITH THE CALL STACK
-          
+
             /*try
             {
                 LevelOne();
@@ -324,7 +324,11 @@ namespace oldSchool
                 Console.WriteLine("Exception caught in Main"+ex.Message);
             }
             Console.WriteLine("App is still running");*/
-            
+
+            //HIDE AND OVERRIDE AND VIRTUAL
+            Animal animal = new Dog();  //upcasting
+            animal.MakeSound(); //override, so of the dog will be called
+            animal.Eat(); //Hide, so the method inside the animal will be called
 
         }
 

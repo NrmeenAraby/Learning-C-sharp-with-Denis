@@ -12,3 +12,4 @@ D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\refint\oldSchool.dll
 D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.pdb
 D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.genruntimeconfig.cache
 D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\ref\oldSchool.dll
+D:\VSprograms\oldSchool\oldSchool\obj\Debug\net8.0\oldSchool.sourcelink.json
