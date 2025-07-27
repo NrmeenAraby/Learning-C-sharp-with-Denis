@@ -333,6 +333,8 @@ namespace oldSchool
             //CONSTRUCTOR INHERITANCE 
             Employee emp = new Employee("Nrmeen", 21, "SW Eengineer", 255);
             emp.DisplayEmployeeInfo();
+            //SHOWING XML DOCUMENTAION EFFECT WHEN WE HOVER HE METHOD
+            emp.BecomeOlder(2);
             
         }
 
