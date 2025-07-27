@@ -8,7 +8,8 @@ namespace oldSchool
 {
     internal class Animal
     {
-         public void Eat()
+      
+        public void Eat()
          {
             Console.WriteLine("Eating...");
          }
@@ -31,12 +32,14 @@ namespace oldSchool
        }
         public override void MakeSound()
         {
+            base.MakeSound();    //we can call the base method if we need its logic als
             Console.WriteLine("Barking...");
         }
         public sealed override void SealedMethod()
         {
             Console.WriteLine("sealed method");
         }
+      
     }
     class cat : Animal {
 

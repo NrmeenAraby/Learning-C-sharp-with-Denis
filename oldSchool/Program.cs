@@ -326,10 +326,14 @@ namespace oldSchool
             Console.WriteLine("App is still running");*/
 
             //HIDE AND OVERRIDE AND VIRTUAL
-            Animal animal = new Dog();  //upcasting
-            animal.MakeSound(); //override, so of the dog will be called
-            animal.Eat(); //Hide, so the method inside the animal will be called
+            //Animal animal = new Dog();  //upcasting
+            //animal.MakeSound(); //override, so of the dog will be called
+            //animal.Eat(); //Hide, so the method inside the animal will be called
 
+            //CONSTRUCTOR INHERITANCE 
+            Employee emp = new Employee("Nrmeen", 21, "SW Eengineer", 255);
+            emp.DisplayEmployeeInfo();
+            
         }
 
 
