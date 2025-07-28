@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,16 @@ namespace oldSchool
         public void DisplayPersonInfo()
         {
             Console.WriteLine($"Name:{Name}, Age: {Age}");
+        }
+
+        /// <summary>Makes our object older.</summary>
+        /// <param name="years">The parameter that indicates the amount of years the object should increased by.</param>
+        /// <returns>Returns the new age after becoming olders.</returns>        
+        public int BecomeOlder(int years)
+        {
+            Age += years;
+            return Age;
+    
         }
     }
 
