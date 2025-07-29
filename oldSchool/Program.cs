@@ -366,6 +366,11 @@ namespace oldSchool
             app=new Application(Dlogger);
             app.DoWork();*/
 
+            //PRACTICE ON CONSTRUCTOR DEPENDENCY INJECTION
+            Hammer hammer = new Hammer();
+            Builder builder=new Builder(hammer);
+            builder.BuildHouse();
+
         }
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace oldSchool
 {
-    internal class Hammer
+    public class Hammer
     {
         public void Use()
         {
@@ -17,9 +17,11 @@ namespace oldSchool
     public class Builder
     {
         private Hammer _hammer;
-        public Builder()
+
+        //CONSTRUCTOR DEPENDENCY INJECTION 
+        public Builder(Hammer hammer)
         {
-            _hammer = new Hammer();   //Builder is responsible for creating its dependencies
+            _hammer = hammer;   
         }
         public void BuildHouse()
         {
