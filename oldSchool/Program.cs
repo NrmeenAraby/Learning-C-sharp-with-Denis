@@ -378,10 +378,17 @@ namespace oldSchool
              builder.BuildHouse();*/
 
             //PRACTICE ON INTERFACE DEPENDENCY INJECTION (via the interface method)
-            Hammer hammer = new Hammer();
-            Builder builder = new Builder();
-            builder.setHammer(hammer);
-            builder.BuildHouse();
+            /* Hammer hammer = new Hammer();
+             Builder builder = new Builder();
+
+             builder.setHammer(hammer);
+             builder.BuildHouse();*/
+
+            //PRACTICE ON  MULTIPLE INHERITANCE (USING INTERFACES)
+            MultiFunctionPrinter multiFunctionPrinter = new MultiFunctionPrinter();
+            multiFunctionPrinter.print();
+            multiFunctionPrinter.Scan();
+
         }
 
 
