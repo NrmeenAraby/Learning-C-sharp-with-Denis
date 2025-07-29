@@ -359,24 +359,29 @@ namespace oldSchool
             File.AppendAllText(filePath, "Heyyyyyy\n");*/
 
             //PRACTUCE ON DECOUPLINE
-           /* ILogger flogger = new FileLogger();
-            ILogger Dlogger =new DbLogger();    
-            Application app=new Application(flogger);
-            app.DoWork();
-            app=new Application(Dlogger);
-            app.DoWork();*/
+            /* ILogger flogger = new FileLogger();
+             ILogger Dlogger =new DbLogger();    
+             Application app=new Application(flogger);
+             app.DoWork();
+             app=new Application(Dlogger);
+             app.DoWork();*/
 
             //PRACTICE ON CONSTRUCTOR DEPENDENCY INJECTION
-           /* Hammer hammer = new Hammer();
-            Builder builder=new Builder(hammer);
-            builder.BuildHouse();*/
+            /* Hammer hammer = new Hammer();
+             Builder builder=new Builder(hammer);
+             builder.BuildHouse();*/
 
             //PRACTICE ON SETTER DEPENDENCY INJECTION
+            /* Hammer hammer = new Hammer();
+             Builder builder = new Builder();
+             builder.Hammer = hammer;   //injection dependency via setter
+             builder.BuildHouse();*/
+
+            //PRACTICE ON INTERFACE DEPENDENCY INJECTION (via the interface method)
             Hammer hammer = new Hammer();
             Builder builder = new Builder();
-            builder.Hammer = hammer;   //injection dependency via setter
+            builder.setHammer(hammer);
             builder.BuildHouse();
-
         }
 
 

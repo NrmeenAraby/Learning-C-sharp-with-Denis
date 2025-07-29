@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace oldSchool
 {
+    public interface IToolUser
+    {
+        void setHammer(Hammer hammer);
+    }
     public class Hammer
     {
         public void Use()
@@ -14,10 +18,17 @@ namespace oldSchool
         }
     }
 
-    public class Builder
+    public class Builder: IToolUser
     {
+        //INTERFACE DEPENDENCY INJECTION
+         private Hammer _hammer;
+
+        public void setHammer(Hammer hammer)
+        {
+            _hammer = hammer;
+        }
         //SETTER DEPENDENCY INJECTION
-        public Hammer Hammer { get; set; }
+        /*  public Hammer Hammer { get; set; }*/
 
         //CONSTRUCTOR DEPENDENCY INJECTION 
         /*
@@ -28,8 +39,10 @@ namespace oldSchool
          }*/
         public void BuildHouse()
         {
-            Hammer.Use();
+            _hammer.Use();
             Console.WriteLine("Building..");
         }
+
+      
     }
 }
