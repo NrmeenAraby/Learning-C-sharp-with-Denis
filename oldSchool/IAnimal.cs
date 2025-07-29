@@ -13,7 +13,7 @@ namespace oldSchool
     }
     public class Cat : IAnimal
     {
-        public void Eat(string food)
+        public  void Eat(string food)
         {
             Console.WriteLine("Cat eats"+food);
         }
@@ -21,6 +21,19 @@ namespace oldSchool
         public void MakeSound()
         {
             Console.WriteLine("Meow");
+        }
+    }
+
+    public class Dogg : IAnimal
+    {
+        public void Eat(string food)
+        {
+            Console.WriteLine("Dog eats" + food);
+        }
+
+        public void MakeSound()
+        {
+            Console.WriteLine("Barking");
         }
     }
 }

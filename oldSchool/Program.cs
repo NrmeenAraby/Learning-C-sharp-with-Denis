@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Diagnostics;
+using System.Linq.Expressions;
 
 namespace oldSchool
 {
@@ -331,11 +332,40 @@ namespace oldSchool
             //animal.Eat(); //Hide, so the method inside the animal will be called
 
             //CONSTRUCTOR INHERITANCE 
-            Employee emp = new Employee("Nrmeen", 21, "SW Eengineer", 255);
-            emp.DisplayEmployeeInfo();
-            //SHOWING XML DOCUMENTAION EFFECT WHEN WE HOVER HE METHOD
-            emp.BecomeOlder(2);
-            
+            /* Employee emp = new Employee("Nrmeen", 21, "SW Eengineer", 255);
+             emp.DisplayEmployeeInfo();
+             //SHOWING XML DOCUMENTAION EFFECT WHEN WE HOVER HE METHOD
+             emp.BecomeOlder(2);*/
+
+            //POLYMORPHISM 
+            /*IAnimal cat = new Cat();
+            IAnimal dog = new Dogg();
+            cat.MakeSound();
+            dog.MakeSound();*/
+
+            //FILE ON MY PC
+            /* 
+             File.AppendAllText("log.txt", "HELLLOOOOOO\n");  // if log.txt isnt there on my pc so it will create a file with this name
+            */
+
+            //CREATE A DIRECTORY THAT IS THE PATH FOR THE FILE WE WILL HANDLE
+            /*string directoryPath = @"D:\LogsWithDenis"; // the folder path
+            string filePath = Path.Combine(directoryPath, "log.txt"); //put the log.txt file inside the folder and then the complete path will be put in the filePath variable
+
+            if (!Directory.Exists(directoryPath)) {          //lw el folder m4 mawgod create it
+                 Directory.CreateDirectory(directoryPath);
+            }
+
+            File.AppendAllText(filePath, "Heyyyyyy\n");*/
+
+            //PRACTUCE ON DECOUPLINE
+           /* ILogger flogger = new FileLogger();
+            ILogger Dlogger =new DbLogger();    
+            Application app=new Application(flogger);
+            app.DoWork();
+            app=new Application(Dlogger);
+            app.DoWork();*/
+
         }
 
 
