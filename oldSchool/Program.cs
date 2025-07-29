@@ -367,8 +367,14 @@ namespace oldSchool
             app.DoWork();*/
 
             //PRACTICE ON CONSTRUCTOR DEPENDENCY INJECTION
-            Hammer hammer = new Hammer();
+           /* Hammer hammer = new Hammer();
             Builder builder=new Builder(hammer);
+            builder.BuildHouse();*/
+
+            //PRACTICE ON SETTER DEPENDENCY INJECTION
+            Hammer hammer = new Hammer();
+            Builder builder = new Builder();
+            builder.Hammer = hammer;   //injection dependency via setter
             builder.BuildHouse();
 
         }

@@ -16,16 +16,19 @@ namespace oldSchool
 
     public class Builder
     {
-        private Hammer _hammer;
+        //SETTER DEPENDENCY INJECTION
+        public Hammer Hammer { get; set; }
 
         //CONSTRUCTOR DEPENDENCY INJECTION 
-        public Builder(Hammer hammer)
-        {
+        /*
+         private Hammer _hammer; 
+         public Builder(Hammer hammer)
+         {
             _hammer = hammer;   
-        }
+         }*/
         public void BuildHouse()
         {
-            _hammer.Use();
+            Hammer.Use();
             Console.WriteLine("Building..");
         }
     }
