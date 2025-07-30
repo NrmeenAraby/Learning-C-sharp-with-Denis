@@ -4,6 +4,9 @@ using System.Linq.Expressions;
 
 namespace oldSchool
 {
+    // ENUMS //
+    enum Day { mo,tu,we,th,fr,sa,su};
+    enum Month {Jan=1,feb ,mar, apr, may, jun=12, jul, aug };
     internal class Program
     {
         static void Main(string[] args)
@@ -151,72 +154,74 @@ namespace oldSchool
             //}
 
             //LISTS WITH COMPLEX OBJECTS
-            //List<Car> cars = new List<Car> { 
-            //   new Car("A3","Audi",false),
-            //   new Car{Model="jj",Brand="ssss", IsLuxury=false }
-            //};
-            //cars.Add(new Car("i7", "BMW", true));
-            //foreach (Car car in cars) {
-            //    Console.WriteLine(car.Brand);            
-            //}
+           /* List<Car> cars = new List<Car> {
+               new Car("A3","Audi",false),
+               new Car{Model="jj",Brand="ssss", IsLuxury=false }
+            };
+            cars.Add(new Car("i7", "BMW", true));
+            foreach (Car car in cars)
+            {
+                Console.WriteLine(car.Brand);
+            }
 
             //FILTERING LISTS WITH COMPLEX TYPE
-            //List<Car> nonLuxury=cars.Where(c => c.IsLuxury==false).ToList();
-            //Console.WriteLine("Non Luxury Cars");
-            //foreach (Car car in nonLuxury) { 
-            //   Console.WriteLine(car.Brand);
-            //}
+            List<Car> nonLuxury = cars.Where(c => c.IsLuxury == false).ToList();
+            Console.WriteLine("Non Luxury Cars");
+            foreach (Car car in nonLuxury)
+            {
+                Console.WriteLine(car.Brand);
+            }*/
 
             //ARRAYLIST
-            //ArrayList arrlist = new ArrayList();  //we can define without size
-            //ArrayList arrlist2=new ArrayList(100); //also we can put a size
+            /* ArrayList arrlist = new ArrayList();  //we can define without size
+             ArrayList arrlist2 = new ArrayList(100); //also we can put a size
 
-            //arrlist.Add("Hi");
-            //arrlist.Add(13);
-            //arrlist.Add(50.25);
-            //arrlist.Add(20);
-            //arrlist.Add(13);
+             arrlist.Add("Hi");
+             arrlist.Add(13);
+             arrlist.Add(50.25);
+             arrlist.Add(20);
+             arrlist.Add(13);
 
-            //arrlist.Remove(13); //just remove first occurance
-            //arrlist.RemoveAt(0); //idx
-            //Console.WriteLine(arrlist.Count);
+             arrlist.Remove(13); //just remove first occurance
+             arrlist.RemoveAt(0); //idx
+             Console.WriteLine(arrlist.Count);*/
 
 
             //HASHTABLES
-            //Car car1= new Car("A3", "Audi", false);
-            //Car car2 = new Car( "jj", "ssss", false);
-            //Car car3 =new Car("i7", "BMW", true);
+            /* Car car1 = new Car("A3", "Audi", false);
+             Car car2 = new Car("jj", "ssss", false);
+             Car car3 = new Car("i7", "BMW", true);
 
-            //Hashtable ht = new Hashtable();
-            //ht.Add(car1.Model, car1);
-            //ht.Add(car2.Model, car2);
-            //ht.Add(car3.Model, car3);
+             Hashtable ht = new Hashtable();
+             ht.Add(car1.Model, car1);
+             ht.Add(car2.Model, car2);
+             ht.Add(car3.Model, car3);
 
-            //Car storedCar = (Car)ht[car2.Model];  //dont forget type casting, as hashtables hold both the key and the value as objects
-            //foreach(DictionaryEntry entry in ht)
-            //{
-            //    Car tmp = (Car)entry.Value;
-            //    Console.WriteLine("car's Model: {0},Brand: {1}", tmp.Model, tmp.Brand);
-            //}
+             Car storedCar = (Car)ht[car2.Model];  //dont forget type casting, as hashtables hold both the key and the value as objects
+             foreach (DictionaryEntry entry in ht)
+             {
+                 Car tmp = (Car)entry.Value;
+                 Console.WriteLine("car's Model: {0},Brand: {1}", tmp.Model, tmp.Brand);
+             }
 
-            ////OR
-            //foreach (Car car in ht.Values)
-            //{
-            //    Console.WriteLine("car's Model: {0},Brand: {1}", car.Model, car.Brand);}
-
+             //OR
+             foreach (Car car in ht.Values)
+             {
+                 Console.WriteLine("car's Model: {0},Brand: {1}", car.Model, car.Brand);}
+             */
 
             //NULLABLE
-            //int? x = null;
-            //int sum = 0;
-            //if (x.HasValue)
-            //{
-            //    Console.WriteLine(x);
-            //    sum += x.Value;  //we must use .value when adding to another 
-            //}
-            //else
-            //{
-            //    Console.WriteLine("x has no value"+x); // x will be ignored and it wont cause a problem
-            //}
+            /*int? x = null;
+            int sum = 0;
+            if (x.HasValue)
+            {
+                Console.WriteLine(x);
+                sum += x.Value;  //we must use .value when adding to another 
+            }
+            else
+            {
+                Console.WriteLine("x has no value" + x); // x will be ignored and it wont cause a problem
+            }*/
 
 
             //DICTIONARY
@@ -390,13 +395,25 @@ namespace oldSchool
             multiFunctionPrinter.Scan();*/
 
             //PRACTICE ON STRUCTS
-            Point p1=new Point(10,20);
+            /*Point p1=new Point(10,20);
             Point p2=new Point(20,30);
             Point p3 = p2;
-            Console.WriteLine(p3.Equals(p1));
             double distance=p1.DistanceTo(p2);
             Console.WriteLine($"Distance between the two points: {distance:F3}");  //:F3 means pur 3 nums after the floating point
-            
+            */
+
+            //PRACTICE ON ENUMS
+            Day mo=Day.mo;
+            Console.WriteLine(mo); //prints the word itself
+            Console.WriteLine((int)mo); //to print the integer value
+
+            Month j = Month.Jan;
+            Console.WriteLine(j);
+            Console.WriteLine((int)j);
+
+            Month jul=Month.jul;
+            Console.WriteLine(Month.jul);//prints the word itself
+            Console.WriteLine((int)jul);
 
         }
 

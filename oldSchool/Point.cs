@@ -9,7 +9,7 @@ namespace oldSchool
     public struct Point
     {
       
-        //READ ONLY properties
+        //READ ONLY properties, so this struct type is IMMUTABLE
         public int X { get; }
         public int Y { get; }
 
