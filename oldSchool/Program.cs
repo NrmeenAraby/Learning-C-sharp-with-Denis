@@ -154,23 +154,23 @@ namespace oldSchool
             //}
 
             //LISTS WITH COMPLEX OBJECTS
-           /* List<Car> cars = new List<Car> {
-               new Car("A3","Audi",false),
-               new Car{Model="jj",Brand="ssss", IsLuxury=false }
-            };
-            cars.Add(new Car("i7", "BMW", true));
-            foreach (Car car in cars)
-            {
-                Console.WriteLine(car.Brand);
-            }
+            /* List<Car> cars = new List<Car> {
+                new Car("A3","Audi",false),
+                new Car{Model="jj",Brand="ssss", IsLuxury=false }
+             };
+             cars.Add(new Car("i7", "BMW", true));
+             foreach (Car car in cars)
+             {
+                 Console.WriteLine(car.Brand);
+             }
 
-            //FILTERING LISTS WITH COMPLEX TYPE
-            List<Car> nonLuxury = cars.Where(c => c.IsLuxury == false).ToList();
-            Console.WriteLine("Non Luxury Cars");
-            foreach (Car car in nonLuxury)
-            {
-                Console.WriteLine(car.Brand);
-            }*/
+             //FILTERING LISTS WITH COMPLEX TYPE
+             List<Car> nonLuxury = cars.Where(c => c.IsLuxury == false).ToList();
+             Console.WriteLine("Non Luxury Cars");
+             foreach (Car car in nonLuxury)
+             {
+                 Console.WriteLine(car.Brand);
+             }*/
 
             //ARRAYLIST
             /* ArrayList arrlist = new ArrayList();  //we can define without size
@@ -403,20 +403,20 @@ namespace oldSchool
             */
 
             //PRACTICE ON ENUMS
-           /* Day mo=Day.mo;
-            Console.WriteLine(mo); //prints the word itself
-            Console.WriteLine((int)mo); //to print the integer value
+            /* Day mo=Day.mo;
+             Console.WriteLine(mo); //prints the word itself
+             Console.WriteLine((int)mo); //to print the integer value
 
-            Month j = Month.Jan;
-            Console.WriteLine(j);
-            Console.WriteLine((int)j);
+             Month j = Month.Jan;
+             Console.WriteLine(j);
+             Console.WriteLine((int)j);
 
-            Month jul=Month.jul;
-            Console.WriteLine(Month.jul);//prints the word itself
-            Console.WriteLine((int)jul);*/
+             Month jul=Month.jul;
+             Console.WriteLine(Month.jul);//prints the word itself
+             Console.WriteLine((int)jul);*/
 
             /// DATE TIME ///
-             DateTime dateTime = new DateTime(2004,5,25);
+            /* DateTime dateTime = new DateTime(2004,5,25);
              Console.WriteLine("My birthday is : "+dateTime);
              Console.WriteLine("Today is: "+DateTime.Today); //prints with 12:00AM (not with the right time)
             //write current time on screen (right time)
@@ -451,7 +451,20 @@ namespace oldSchool
             else
             {
                 Console.WriteLine("Wrong input");
-            }
+            }*/
+
+            //MATH CLASS
+
+            Console.WriteLine("Ceiling "+Math.Ceiling(12.2));
+            Console.WriteLine("Floor "+Math.Floor(13.6));
+            Console.WriteLine("3 Pow 5:  "+Math.Pow(3,5));
+            Console.WriteLine("PI "+Math.PI);
+            Console.WriteLine("square root "+Math.Sqrt(25.1));
+            Console.WriteLine("Abs "+Math.Abs(-5));
+            Console.WriteLine("Min of 5 and 2.2:  "+Math.Min(2.2,5));
+            Console.WriteLine("Max of 6 and 1: "+Math.Max(1,6));
+            Console.WriteLine("cos of 90: "+Math.Cos(90));
+           
 
         }
 
