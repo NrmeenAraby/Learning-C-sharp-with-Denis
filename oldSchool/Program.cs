@@ -403,7 +403,7 @@ namespace oldSchool
             */
 
             //PRACTICE ON ENUMS
-            Day mo=Day.mo;
+           /* Day mo=Day.mo;
             Console.WriteLine(mo); //prints the word itself
             Console.WriteLine((int)mo); //to print the integer value
 
@@ -413,8 +413,54 @@ namespace oldSchool
 
             Month jul=Month.jul;
             Console.WriteLine(Month.jul);//prints the word itself
-            Console.WriteLine((int)jul);
+            Console.WriteLine((int)jul);*/
 
+            /// DATE TIME ///
+             DateTime dateTime = new DateTime(2004,5,25);
+             Console.WriteLine("My birthday is : "+dateTime);
+             Console.WriteLine("Today is: "+DateTime.Today); //prints with 12:00AM (not with the right time)
+            //write current time on screen (right time)
+            Console.WriteLine(DateTime.Now);
+            //get the day of today
+            Console.WriteLine(DateTime.Today.DayOfWeek);
+            //data of tomorrow
+            DateTime tomorrow=GetTomorrow();
+            Console.WriteLine("Tomorrow will be: "+ tomorrow);
+            //first day of some year
+            Console.WriteLine(GetFirstDayOfYear(2004));
+
+            //num of days in a month in some year
+            int days = DateTime.DaysInMonth(2004, 2);
+            Console.WriteLine("in 2004: "+days);
+            days = DateTime.DaysInMonth(2005, 2);
+            Console.WriteLine("in 2005: "+days);
+
+            // we can print hours, minutes or seconds
+            DateTime now = DateTime.Now;
+            Console.WriteLine("Hours: "+now.Hour+" Minutes: "+now.Minute+" Seconds: "+now.Second);
+
+            //how many days ??
+            Console.WriteLine("Write a date in this format: yyyy-mm-dd");
+            string input=Console.ReadLine();
+            DateTime date; 
+            if (DateTime.TryParse(input, out date))
+            {
+                TimeSpan daysPassed=now.Subtract(date);
+                Console.WriteLine("Days passed: "+daysPassed.Days);
+            }
+            else
+            {
+                Console.WriteLine("Wrong input");
+            }
+
+        }
+
+        static DateTime GetTomorrow()
+        {
+            return DateTime.Today.AddDays(1);
+        }
+        static DateTime GetFirstDayOfYear(int year) { 
+          return new DateTime(year,1,1);
         }
 
 
