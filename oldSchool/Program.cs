@@ -7,6 +7,10 @@ namespace oldSchool
     // ENUMS //
     enum Day { mo,tu,we,th,fr,sa,su};
     enum Month {Jan=1,feb ,mar, apr, may, jun=12, jul, aug };
+
+    /// 1- DELEGATES DECLARATION///
+    public delegate void Notify(string message);
+
     internal class Program
     {
         static void Main(string[] args)
@@ -454,8 +458,7 @@ namespace oldSchool
             }*/
 
             //MATH CLASS
-
-            Console.WriteLine("Ceiling "+Math.Ceiling(12.2));
+            /*Console.WriteLine("Ceiling "+Math.Ceiling(12.2));
             Console.WriteLine("Floor "+Math.Floor(13.6));
             Console.WriteLine("3 Pow 5:  "+Math.Pow(3,5));
             Console.WriteLine("PI "+Math.PI);
@@ -463,13 +466,25 @@ namespace oldSchool
             Console.WriteLine("Abs "+Math.Abs(-5));
             Console.WriteLine("Min of 5 and 2.2:  "+Math.Min(2.2,5));
             Console.WriteLine("Max of 6 and 1: "+Math.Max(1,6));
-            Console.WriteLine("cos of 90: "+Math.Cos(90));
-           
+            Console.WriteLine("cos of 90: "+Math.Cos(90));*/
 
+            ///  DELEGATES ///
+            //2- Instantiation
+            Notify notifyDelegate = ShowMessage;
+
+            //3-Invocation
+            notifyDelegate("Heya, im learnig delegates");
+        }
+
+        //The method we use with DELEGATES
+        static void ShowMessage(string msg)
+        {
+            Console.WriteLine(msg);
         }
 
         static DateTime GetTomorrow()
         {
+            
             return DateTime.Today.AddDays(1);
         }
         static DateTime GetFirstDayOfYear(int year) { 
