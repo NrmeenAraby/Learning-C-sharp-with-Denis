@@ -385,9 +385,18 @@ namespace oldSchool
              builder.BuildHouse();*/
 
             //PRACTICE ON  MULTIPLE INHERITANCE (USING INTERFACES)
-            MultiFunctionPrinter multiFunctionPrinter = new MultiFunctionPrinter();
+            /*MultiFunctionPrinter multiFunctionPrinter = new MultiFunctionPrinter();
             multiFunctionPrinter.print();
-            multiFunctionPrinter.Scan();
+            multiFunctionPrinter.Scan();*/
+
+            //PRACTICE ON STRUCTS
+            Point p1=new Point(10,20);
+            Point p2=new Point(20,30);
+            Point p3 = p2;
+            Console.WriteLine(p3.Equals(p1));
+            double distance=p1.DistanceTo(p2);
+            Console.WriteLine($"Distance between the two points: {distance:F3}");  //:F3 means pur 3 nums after the floating point
+            
 
         }
 
