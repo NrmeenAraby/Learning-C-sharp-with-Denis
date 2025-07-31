@@ -516,11 +516,65 @@ namespace oldSchool
 
             //Invokeing the multicast delegate
             logHandler("Log this info!");
+            //or safely we can use the method we defiend
+            InvokeSafely(logHandler,"log this i nfo, BUT SAFELY");
 
-            //removing a method from the multicast delegate
+           //removing a method from the multicast delegate
             logHandler -= logger.LogToFile;
             logHandler("After removing LogToFile");
 
+            //TO REMOVE IN A SAFE WAY using the method we defiend
+            if (IsMethodInDelegate(logHandler,logger.LogToFile)) {
+                logHandler -= logger.LogToFile;
+                Console.WriteLine("After removing LogToFile, SAFELY");
+
+            }
+            else
+            {
+                Console.WriteLine("NOT FOUND");
+            }
+
+
+                //To invoke safely (to make sure that our delegate already have functions and we wont call a null delegate)
+                //also this approach calls method by method (not all in one line)
+                foreach (LogHandler handler in logHandler.GetInvocationList())
+                {
+                    try
+                    {
+                        logHandler("Event occured with try catch");
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Exception caught: " + ex.Message);
+                    }
+                }
+
+
+
+
+        }
+
+        static bool IsMethodInDelegate(LogHandler OurDelegate,LogHandler method)
+        {
+            if(OurDelegate==null)
+            {
+                return false;
+            }
+
+            foreach(var d in OurDelegate.GetInvocationList())
+            {
+                if (d == (Delegate)method) //34an el list holds delegates, f casting to delegate zyadt ta2keed m4 aktr
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        static void InvokeSafely(LogHandler logHandler,string msg)
+        {
+            if (logHandler != null) {
+                logHandler(msg);
+            }
         }
         static int CompareByName(Human human1, Human human2)
         {
