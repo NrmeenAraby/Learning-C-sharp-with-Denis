@@ -483,11 +483,39 @@ namespace oldSchool
             }*/
 
             //SIMPLE PRACTICE ON GENERIC
-            int[] arr = { 5, 3, 8, 4, 2 };
+            /*int[] arr = { 5, 3, 8, 4, 2 };
             string[] arr2 = { "one", "two", "three" };
             PrintArray(arr);
-            PrintArray(arr2);
+            PrintArray(arr2);*/
+
+            //PRACTICE ON DELEGATES WITH GENERICS WITHIN CLASSES
+
+            Human[] humans = {
+              new Human{Name="Alice",Age=30 },   // i use those {} as we didn put a constructor 
+              new Human{Name="Bob",Age=25 },
+              new Human{Name="charlie",Age=35 },
+              new Human{Name="Denis",Age=36 }
+            }; 
+            HumanSorter sorter = new HumanSorter();
+            sorter.Sort(humans,CompareByAge);
+            foreach (Human human in humans) { 
+                Console.WriteLine("Name: "+human.Name+", Age: "+human.Age);
+            }
+            sorter.Sort(humans, CompareByName);
+            foreach (Human human in humans)
+            {
+                Console.WriteLine("Name: " + human.Name + ", Age: " + human.Age);
+            }
+
         }
+        static int CompareByName(Human human1, Human human2)
+        {
+            return human1.Name.CompareTo(human2.Name);
+        }
+
+        static int CompareByAge(Human human1, Human human2) { 
+          return human1.Age.CompareTo(human2.Age);        
+         }
 
         //intro to GENERICS 
         static void PrintArray<T>(T[] arr) {
