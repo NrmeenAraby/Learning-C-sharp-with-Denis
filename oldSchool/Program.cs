@@ -476,12 +476,26 @@ namespace oldSchool
              notifyDelegate("Heya, im learnig delegates");*/
 
             /// BUBBLE SORT///
-            int[] arr = { 5, 3, 8, 4, 2 };
+           /* int[] arr = { 5, 3, 8, 4, 2 };
             BubbleSortAlgo.BubbleSort(arr);
             foreach (int num in arr) { 
               Console.WriteLine(num);
+            }*/
+
+            //SIMPLE PRACTICE ON GENERIC
+            int[] arr = { 5, 3, 8, 4, 2 };
+            string[] arr2 = { "one", "two", "three" };
+            PrintArray(arr);
+            PrintArray(arr2);
+        }
+
+        //intro to GENERICS 
+        static void PrintArray<T>(T[] arr) {
+            foreach (T item in arr) { 
+              Console.WriteLine(item);            
             }
         }
+                
 
         //The method we use with DELEGATES
         static void ShowMessage(string msg)
