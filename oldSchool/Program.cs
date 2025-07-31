@@ -490,7 +490,7 @@ namespace oldSchool
 
             //PRACTICE ON DELEGATES WITH GENERICS WITHIN CLASSES
 
-            Human[] humans = {
+           /* Human[] humans = {
               new Human{Name="Alice",Age=30 },   // i use those {} as we didn put a constructor 
               new Human{Name="Bob",Age=25 },
               new Human{Name="charlie",Age=35 },
@@ -505,7 +505,21 @@ namespace oldSchool
             foreach (Human human in humans)
             {
                 Console.WriteLine("Name: " + human.Name + ", Age: " + human.Age);
-            }
+            }*/
+
+            /// Multicast delegates ///
+            Logger logger = new Logger();
+            LogHandler logHandler = logger.LogToConsole; // now the delegate has a refernce on the LogToConsole method
+
+            //Add another method (Multicast delegate)
+            logHandler += logger.LogToFile;
+
+            //Invokeing the multicast delegate
+            logHandler("Log this info!");
+
+            //removing a method from the multicast delegate
+            logHandler -= logger.LogToFile;
+            logHandler("After removing LogToFile");
 
         }
         static int CompareByName(Human human1, Human human2)
