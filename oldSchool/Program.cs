@@ -470,10 +470,17 @@ namespace oldSchool
 
             ///  DELEGATES ///
             //2- Instantiation
-            Notify notifyDelegate = ShowMessage;
+            /* Notify notifyDelegate = ShowMessage;
 
-            //3-Invocation
-            notifyDelegate("Heya, im learnig delegates");
+             //3-Invocation
+             notifyDelegate("Heya, im learnig delegates");*/
+
+            /// BUBBLE SORT///
+            int[] arr = { 5, 3, 8, 4, 2 };
+            BubbleSortAlgo.BubbleSort(arr);
+            foreach (int num in arr) { 
+              Console.WriteLine(num);
+            }
         }
 
         //The method we use with DELEGATES
