@@ -508,7 +508,7 @@ namespace oldSchool
             }*/
 
             /// Multicast delegates ///
-            Logger logger = new Logger();
+            /*Logger logger = new Logger();
             LogHandler logHandler = logger.LogToConsole; // now the delegate has a refernce on the LogToConsole method
 
             //Add another method (Multicast delegate)
@@ -547,8 +547,14 @@ namespace oldSchool
                     {
                         Console.WriteLine("Exception caught: " + ex.Message);
                     }
-                }
+                }*/
 
+            // PRACTICE ON EVENTS
+            EventPublisher eventPublisher = new EventPublisher();
+            EventSubscriber eventSubscriber = new EventSubscriber();
+
+            eventPublisher.OnNotify += eventSubscriber.OnEventRaised;
+            eventPublisher.RaiseEvent("Testtt");
 
 
 
