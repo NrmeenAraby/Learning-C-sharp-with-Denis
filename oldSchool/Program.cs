@@ -10,6 +10,7 @@ namespace oldSchool
 
     /// 1- DELEGATES DECLARATION///
     public delegate void Notify(string message);
+    public delegate void TemperatureChangeHandler(string msg);
 
     internal class Program
     {
@@ -550,13 +551,18 @@ namespace oldSchool
                 }*/
 
             // PRACTICE ON EVENTS
-            EventPublisher eventPublisher = new EventPublisher();
+           /* EventPublisher eventPublisher = new EventPublisher();
             EventSubscriber eventSubscriber = new EventSubscriber();
 
             eventPublisher.OnNotify += eventSubscriber.OnEventRaised;
-            eventPublisher.RaiseEvent("Testtt");
+            eventPublisher.RaiseEvent("Testtt");*/
+           TempratureMonitor tempratureMonitor = new TempratureMonitor();
+           TemperatureAlert temperatureAlert = new TemperatureAlert();
 
+            tempratureMonitor.OnTemperatureChange += temperatureAlert.OnTemperatureChanged;
 
+            Console.WriteLine("Plz enter a the temperature");
+            tempratureMonitor.Temperature=double.Parse(Console.ReadLine());
 
         }
 
