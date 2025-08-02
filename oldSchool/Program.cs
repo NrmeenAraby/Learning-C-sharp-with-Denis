@@ -556,7 +556,7 @@ namespace oldSchool
 
             eventPublisher.OnNotify += eventSubscriber.OnEventRaised;
             eventPublisher.RaiseEvent("Testtt");*/
-           TempratureMonitor tempratureMonitor = new TempratureMonitor();
+           TemperatureMonitor tempratureMonitor = new TemperatureMonitor();
            TemperatureAlert temperatureAlert = new TemperatureAlert();
 
             tempratureMonitor.OnTemperatureChange += temperatureAlert.OnTemperatureChanged;
