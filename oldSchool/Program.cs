@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Diagnostics;
 using System.Linq.Expressions;
+using System.Text.RegularExpressions;
 
 namespace oldSchool
 {
@@ -477,11 +478,11 @@ namespace oldSchool
              notifyDelegate("Heya, im learnig delegates");*/
 
             /// BUBBLE SORT///
-           /* int[] arr = { 5, 3, 8, 4, 2 };
-            BubbleSortAlgo.BubbleSort(arr);
-            foreach (int num in arr) { 
-              Console.WriteLine(num);
-            }*/
+            /* int[] arr = { 5, 3, 8, 4, 2 };
+             BubbleSortAlgo.BubbleSort(arr);
+             foreach (int num in arr) { 
+               Console.WriteLine(num);
+             }*/
 
             //SIMPLE PRACTICE ON GENERIC
             /*int[] arr = { 5, 3, 8, 4, 2 };
@@ -491,22 +492,22 @@ namespace oldSchool
 
             //PRACTICE ON DELEGATES WITH GENERICS WITHIN CLASSES
 
-           /* Human[] humans = {
-              new Human{Name="Alice",Age=30 },   // i use those {} as we didn put a constructor 
-              new Human{Name="Bob",Age=25 },
-              new Human{Name="charlie",Age=35 },
-              new Human{Name="Denis",Age=36 }
-            }; 
-            HumanSorter sorter = new HumanSorter();
-            sorter.Sort(humans,CompareByAge);
-            foreach (Human human in humans) { 
-                Console.WriteLine("Name: "+human.Name+", Age: "+human.Age);
-            }
-            sorter.Sort(humans, CompareByName);
-            foreach (Human human in humans)
-            {
-                Console.WriteLine("Name: " + human.Name + ", Age: " + human.Age);
-            }*/
+            /* Human[] humans = {
+               new Human{Name="Alice",Age=30 },   // i use those {} as we didn put a constructor 
+               new Human{Name="Bob",Age=25 },
+               new Human{Name="charlie",Age=35 },
+               new Human{Name="Denis",Age=36 }
+             }; 
+             HumanSorter sorter = new HumanSorter();
+             sorter.Sort(humans,CompareByAge);
+             foreach (Human human in humans) { 
+                 Console.WriteLine("Name: "+human.Name+", Age: "+human.Age);
+             }
+             sorter.Sort(humans, CompareByName);
+             foreach (Human human in humans)
+             {
+                 Console.WriteLine("Name: " + human.Name + ", Age: " + human.Age);
+             }*/
 
             /// Multicast delegates ///
             /*Logger logger = new Logger();
@@ -551,18 +552,30 @@ namespace oldSchool
                 }*/
 
             // PRACTICE ON EVENTS
-           /* EventPublisher eventPublisher = new EventPublisher();
-            EventSubscriber eventSubscriber = new EventSubscriber();
+            /* EventPublisher eventPublisher = new EventPublisher();
+             EventSubscriber eventSubscriber = new EventSubscriber();
 
-            eventPublisher.OnNotify += eventSubscriber.OnEventRaised;
-            eventPublisher.RaiseEvent("Testtt");*/
-           TemperatureMonitor tempratureMonitor = new TemperatureMonitor();
-           TemperatureAlert temperatureAlert = new TemperatureAlert();
+             eventPublisher.OnNotify += eventSubscriber.OnEventRaised;
+             eventPublisher.RaiseEvent("Testtt");*/
+            /*TemperatureMonitor tempratureMonitor = new TemperatureMonitor();
+            TemperatureAlert temperatureAlert = new TemperatureAlert();
 
-            tempratureMonitor.OnTemperatureChange += temperatureAlert.OnTemperatureChanged;
+             tempratureMonitor.OnTemperatureChange += temperatureAlert.OnTemperatureChanged;
 
-            Console.WriteLine("Plz enter a the temperature");
-            tempratureMonitor.Temperature=double.Parse(Console.ReadLine());
+             Console.WriteLine("Plz enter a the temperature");
+             tempratureMonitor.Temperature=double.Parse(Console.ReadLine());*/
+
+            /// REGEX ///
+            string pattern = @"\d{5}";
+            Regex regex=new Regex(pattern);
+            string txt = " Hi ther, my number is 12538";
+            MatchCollection matchCollection = regex.Matches(txt);
+            Console.WriteLine("{0} hits found",matchCollection.Count);
+            foreach(Match match in matchCollection)
+            {
+                GroupCollection groupCollection = match.Groups;
+                Console.WriteLine($"{groupCollection[0].Value} found at {groupCollection[0].Index}");
+            }
 
         }
 
