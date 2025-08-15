@@ -11,11 +11,12 @@ namespace oldSchool
         public List<University> universities;
         public List<Student> students;
 
-        public UniversityManagerLINQ() { 
-           universities = new List<University>();
-           students = new List<Student>();
+        public UniversityManagerLINQ()
+        {
+            universities = new List<University>();
+            students = new List<Student>();
 
-            universities.Add(new University { Id=1, Name="ASU"});
+            universities.Add(new University { Id = 1, Name = "ASU" });
             universities.Add(new University { Id = 2, Name = "GUC" });
 
             students.Add(new Student { Id = 1, Name = "Carla", Gender = "female", Age = 17, UniId = 1 });
@@ -38,9 +39,9 @@ namespace oldSchool
         }
         public void MaleStudents()
         {
-            IEnumerable<Student> maleStudents= from  student in students
-                                               where student.Gender=="male"
-                                               select student;
+            IEnumerable<Student> maleStudents = from student in students
+                                                where student.Gender == "male"
+                                                select student;
             Console.WriteLine("Male - Students: ");
             foreach (Student student in maleStudents)
             {
@@ -72,7 +73,8 @@ namespace oldSchool
                 student.Print();
             }
         }
-        public void AllStudentsFromThatUni(int Id) { 
+        public void AllStudentsFromThatUni(int Id)
+        {
             IEnumerable<Student> filteredStudents = from student in students
                                                     join university in universities on student.UniId equals university.Id
                                                     where university.Id == Id
@@ -84,6 +86,18 @@ namespace oldSchool
                 student.Print();
             }
 
+        }
+        public void StudentAndUniversityNameCollection()
+        {
+            var newCollection = from student in students
+                                join university in universities on student.UniId equals university.Id
+                                orderby student.Name
+                                select new { studentName = student.Name, universityName = university.Name }; //this new key word cuz we create a collection with a type isnt there (we create a new object 3la 3ks el Student mthlan elly 3amleen mno object f3ln (student) )
+            Console.WriteLine("New Collection: ");
+            foreach (var obj in newCollection)
+            {
+                Console.WriteLine("Student {0} from university {1}", obj.studentName, obj.universityName);
+            }
         }
     }
 }

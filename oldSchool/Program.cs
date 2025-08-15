@@ -619,7 +619,7 @@ namespace oldSchool
             catch (Exception ex) { 
               Console.WriteLine(ex.ToString()); 
             }
-
+            universityManagerLINQ.StudentAndUniversityNameCollection();
         }
 
 
