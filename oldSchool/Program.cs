@@ -566,7 +566,7 @@ namespace oldSchool
              tempratureMonitor.Temperature=double.Parse(Console.ReadLine());*/
 
             /// REGEX ///
-            string pattern = @"\d{5}";
+            /*  string pattern = @"\d{5}";
             Regex regex=new Regex(pattern);
             string txt = " Hi ther, my number is 12538";
             MatchCollection matchCollection = regex.Matches(txt);
@@ -575,9 +575,54 @@ namespace oldSchool
             {
                 GroupCollection groupCollection = match.Groups;
                 Console.WriteLine($"{groupCollection[0].Value} found at {groupCollection[0].Index}");
+            }*/
+
+            /// LINQ ///
+            /*int[] numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            IEnumerable<int> oddNums = from number in numbers
+                                       where number % 2 != 0
+                                       select number;
+            foreach (int num in oddNums) { 
+               Console.WriteLine(num);
+            }
+            //ORDER BY
+            int[] someNums = { 30, 12, 4, 3, 12 };
+            IEnumerable<int> sorted= from num in someNums
+                                     orderby num 
+                                     select num; 
+
+            IEnumerable<int>reversed=sorted.Reverse();
+            foreach (int num in reversed) { 
+               Console.WriteLine(num);
+            }
+            //Or
+            IEnumerable<int>reversedLINQ = from num in someNums
+                                           orderby num descending
+                                           select num;
+            foreach (int num in reversedLINQ)
+            {
+                Console.WriteLine(num);
+            }*/
+
+            UniversityManagerLINQ universityManagerLINQ = new UniversityManagerLINQ();
+            universityManagerLINQ.FemaleStudents();
+            universityManagerLINQ.MaleStudents();
+            universityManagerLINQ.SortStudentsByAge();
+            universityManagerLINQ.AllStudentsFromASU();
+
+            try
+            {
+                string input = Console.ReadLine();
+                int idAsInput = int.Parse(input);
+                universityManagerLINQ.AllStudentsFromThatUni(idAsInput);
+            }
+            catch (Exception ex) { 
+              Console.WriteLine(ex.ToString()); 
             }
 
         }
+
+
 
         static bool IsMethodInDelegate(LogHandler OurDelegate,LogHandler method)
         {
