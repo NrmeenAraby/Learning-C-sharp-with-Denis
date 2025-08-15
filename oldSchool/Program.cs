@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 namespace oldSchool
 {
@@ -602,7 +603,7 @@ namespace oldSchool
             foreach (int num in reversedLINQ)
             {
                 Console.WriteLine(num);
-            }*/
+            }
 
             UniversityManagerLINQ universityManagerLINQ = new UniversityManagerLINQ();
             universityManagerLINQ.FemaleStudents();
@@ -619,7 +620,52 @@ namespace oldSchool
             catch (Exception ex) { 
               Console.WriteLine(ex.ToString()); 
             }
-            universityManagerLINQ.StudentAndUniversityNameCollection();
+            universityManagerLINQ.StudentAndUniversityNameCollection();*/
+
+            // LINQ WITH XML
+            string studentsXML = @"<Students>
+                                 <Student>
+                                   <Name>Nero</Name>
+                                   <Age>21</Age>
+                                    <University>ASU</University>
+                                    <Semester>7</Semester>
+                                 </Student>
+                                 <Student>
+                                   <Name>Lara</Name>
+                                   <Age>19</Age>
+                                    <University>GUC</University>
+                                    <Semester>3</Semester>
+                                 </Student>
+                                 <Student>
+                                   <Name>leyla</Name>
+                                   <Age>19</Age>
+                                    <University>ASU</University>
+                                    <Semester>3</Semester>
+                                 </Student>
+                                </Students>";
+            XDocument studentsXdoc = new XDocument();
+            studentsXdoc = XDocument.Parse(studentsXML);
+            var students = from student in studentsXdoc.Descendants("Student") //.Descendants("Student") → This method digs through the whole XML tree and grabs all <Student> tags
+                           select new
+                           {
+                               Name = student.Element("Name").Value,
+                               Age = student.Element("Age").Value,
+                               University = student.Element("University").Value,
+                               Semester = student.Element("Semester").Value
+                           };
+            foreach (var student in students) {
+                Console.WriteLine("Students {0} with age {1} from Universirt {2} is in his/her {3} semester",student.Name,student.Age,student.University,student.Semester);
+            }
+            //sorted
+            var sortedStudents = from student in students
+                                 orderby student.Age
+                                 select student;
+
+            Console.WriteLine("After sorting by age: ");
+            foreach (var student in sortedStudents)
+            {
+                Console.WriteLine("Students {0} with age {1} from Universirt {2} is in his/her {3} semester", student.Name, student.Age, student.University, student.Semester);
+            }
         }
 
 
