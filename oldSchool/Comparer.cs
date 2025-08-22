@@ -8,5 +8,9 @@ namespace oldSchool
 {
     internal class Comparer
     {
+        public static bool AreEqual<T>(T a, T b) where T : class 
+        {
+            return a == b;
+        }
     }
 }
