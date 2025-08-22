@@ -672,11 +672,12 @@ namespace oldSchool
              Console.WriteLine(hi);*/
 
             /// GENERICS ///
-            
-            /*BoxT<string> boxStr = new BoxT<string>("Hello");
-            boxStr.UpdateContent("Learning Generics in C#");
-            Console.WriteLine(boxStr.GetContent());*/
 
+            /*BoxT<int> boxint = new BoxT<int>(25);// will give error as we set a constraint on the typr we can use in this BoxT (Accept only classes)
+            BoxT<string> boxStr = new BoxT<string>("Hello");
+            boxStr.UpdateContent("Learning Generics in C#");
+            Console.WriteLine(boxStr.GetContent());
+            BoxT<Car> boxc = new BoxT<Car>();*/
             //Multiple Generic types
            /* BoxTT<int,string> box=new BoxTT<int,string>(5,"Five");
             box.display();*/

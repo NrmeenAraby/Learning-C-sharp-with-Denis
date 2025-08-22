@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace oldSchool
 {
-    internal class BoxT<T>
+    internal class BoxT<T> where T : class  //set a constraint on the type we can use
     {
         public T Content { get; set; }
         public BoxT(T content)
         {
             Content = content;
         }
+        public BoxT() { }
 
         public void UpdateContent(T newContent)
         {
