@@ -678,8 +678,14 @@ namespace oldSchool
             Console.WriteLine(boxStr.GetContent());*/
 
             //Multiple Generic types
-            BoxTT<int,string> box=new BoxTT<int,string>(5,"Five");
-            box.display();
+           /* BoxTT<int,string> box=new BoxTT<int,string>(5,"Five");
+            box.display();*/
+
+            //Normal class contains generic method
+            ClassWithGenericMethod c = new ClassWithGenericMethod();
+            c.Log<int>(10);
+            c.Log<string>("Hi");
+            c.Log(new { Name = "Nrmeen", Age = 21 }); //C# smart enough f m4 darory n-determine el type ll method
 
         }
 
