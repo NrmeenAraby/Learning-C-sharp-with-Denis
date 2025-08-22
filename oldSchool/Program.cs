@@ -370,7 +370,7 @@ namespace oldSchool
 
             File.AppendAllText(filePath, "Heyyyyyy\n");*/
 
-            //PRACTUCE ON DECOUPLINE
+            //PRACTICE ON DECOUPLINE
             /* ILogger flogger = new FileLogger();
              ILogger Dlogger =new DbLogger();    
              Application app=new Application(flogger);
@@ -511,46 +511,46 @@ namespace oldSchool
              }*/
 
             /// Multicast delegates ///
-            /*Logger logger = new Logger();
-            LogHandler logHandler = logger.LogToConsole; // now the delegate has a refernce on the LogToConsole method
+            /* Logger logger = new Logger();
+             LogHandler logHandler = logger.LogToConsole; // now the delegate has a refernce on the LogToConsole method
 
-            //Add another method (Multicast delegate)
-            logHandler += logger.LogToFile;
+             //Add another method (Multicast delegate)
+             logHandler += logger.LogToFile;
 
-            //Invokeing the multicast delegate
-            logHandler("Log this info!");
-            //or safely we can use the method we defiend
-            InvokeSafely(logHandler,"log this i nfo, BUT SAFELY");
+             //Invokeing the multicast delegate
+             logHandler("Log this info!");
+             //or safely we can use the method we defiend
+             InvokeSafely(logHandler,"log this i nfo, BUT SAFELY");
 
-           //removing a method from the multicast delegate
-            logHandler -= logger.LogToFile;
-            logHandler("After removing LogToFile");
+            //removing a method from the multicast delegate
+             logHandler -= logger.LogToFile;
+             logHandler("After removing LogToFile");
 
-            //TO REMOVE IN A SAFE WAY using the method we defiend
-            if (IsMethodInDelegate(logHandler,logger.LogToFile)) {
-                logHandler -= logger.LogToFile;
-                Console.WriteLine("After removing LogToFile, SAFELY");
+             //TO REMOVE IN A SAFE WAY using the method we defiend
+             if (IsMethodInDelegate(logHandler,logger.LogToFile)) {
+                 logHandler -= logger.LogToFile;
+                 Console.WriteLine("After removing LogToFile, SAFELY");
 
-            }
-            else
-            {
-                Console.WriteLine("NOT FOUND");
-            }
+             }
+             else
+             {
+                 Console.WriteLine("NOT FOUND");
+             }
 
 
-                //To invoke safely (to make sure that our delegate already have functions and we wont call a null delegate)
-                //also this approach calls method by method (not all in one line)
-                foreach (LogHandler handler in logHandler.GetInvocationList())
-                {
-                    try
-                    {
-                        logHandler("Event occured with try catch");
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Exception caught: " + ex.Message);
-                    }
-                }*/
+                 //To invoke safely (to make sure that our delegate already have functions and we wont call a null delegate)
+                 //also this approach calls method by method (not all in one line)
+                 foreach (LogHandler handler in logHandler.GetInvocationList())
+                 {
+                     try
+                     {
+                         logHandler("Event occured with try catch");
+                     }
+                     catch (Exception ex)
+                     {
+                         Console.WriteLine("Exception caught: " + ex.Message);
+                     }
+                 }*/
 
             // PRACTICE ON EVENTS
             /* EventPublisher eventPublisher = new EventPublisher();
@@ -623,7 +623,7 @@ namespace oldSchool
             universityManagerLINQ.StudentAndUniversityNameCollection();*/
 
             // LINQ WITH XML
-            string studentsXML = @"<Students>
+            /*string studentsXML = @"<Students>
                                  <Student>
                                    <Name>Nero</Name>
                                    <Age>21</Age>
@@ -665,7 +665,16 @@ namespace oldSchool
             foreach (var student in sortedStudents)
             {
                 Console.WriteLine("Students {0} with age {1} from Universirt {2} is in his/her {3} semester", student.Name, student.Age, student.University, student.Semester);
-            }
+            }*/
+
+            /* int hi = 5;
+             hi++;
+             Console.WriteLine(hi);*/
+
+            /// GENERICS ///
+            BoxT<string> boxStr = new BoxT<string>("Hello");
+            boxStr.UpdateContent("Learning Generics in C#");
+            Console.WriteLine(boxStr.GetContent());
         }
 
 
