@@ -672,9 +672,15 @@ namespace oldSchool
              Console.WriteLine(hi);*/
 
             /// GENERICS ///
-            BoxT<string> boxStr = new BoxT<string>("Hello");
+            
+            /*BoxT<string> boxStr = new BoxT<string>("Hello");
             boxStr.UpdateContent("Learning Generics in C#");
-            Console.WriteLine(boxStr.GetContent());
+            Console.WriteLine(boxStr.GetContent());*/
+
+            //Multiple Generic types
+            BoxTT<int,string> box=new BoxTT<int,string>(5,"Five");
+            box.display();
+
         }
 
 
