@@ -23,4 +23,23 @@ namespace oldSchool
 
         }
     }
+
+    //Generic class with Generic Interface
+    internal interface IRepositoryT2<T>  //el type rlly yetb3tly yekon 3ml implementaion l IEntity interface 
+    {
+        void Add(T entity);
+        void Remove(T entity);
+    }
+
+    internal class RepositoryT<T> : IRepositoryT2<T>  //Product class has already implemented IEntity in the Repository.cs file
+    {
+        public void Add(T entity)
+        {
+
+        }
+        public void Remove(T entity)
+        {
+
+        }
+    }
 }
