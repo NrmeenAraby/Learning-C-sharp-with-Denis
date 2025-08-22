@@ -680,8 +680,8 @@ namespace oldSchool
             BoxT<Car> boxc = new BoxT<Car>();*/
 
             //Multiple Generic types
-           /* BoxTT<int,string> box=new BoxTT<int,string>(5,"Five");
-            box.display();*/
+            /* BoxTT<int,string> box=new BoxTT<int,string>(5,"Five");
+             box.display();*/
 
             //Normal class contains generic method
             /*ClassWithGenericMethod c = new ClassWithGenericMethod();
@@ -689,10 +689,17 @@ namespace oldSchool
             c.Log<string>("Hi");
             c.Log(new { Name = "Nrmeen", Age = 21 }); //C# smart enough f m4 darory n-determine el type ll method*/
 
-            //Generics with Interface Constraint
-            Product product = new Product();
+            //Custom Interface Constraint
+            /*Product product = new Product();
             Repository<Product> repository = new Repository<Product>();
-            repository.Add(product);
+            repository.Add(product);*/
+
+            //Constraints for generic methods
+            Product product = new Product();
+            Product product2 = new Product();
+            bool res= Comparer.AreEqual(product, product2);
+
+
 
         }
 
