@@ -700,14 +700,25 @@ namespace oldSchool
              bool res= Comparer.AreEqual(product, product2);*/
 
             //Reflections
-            string myName = "Nrmeen";
+            /*string myName = "Nrmeen";
             if (myName.GetType() == typeof(string))
             {
                 Console.WriteLine(myName.GetType().ToString());
             }
             Type type = typeof(Repository<>);
-            Console.WriteLine(type.ToString());
+            Console.WriteLine(type.ToString());*/
 
+            //Action<>      A generuc delegate that with no return value(void)
+            Action action = () => { Console.WriteLine("Hiii"); };
+            action();
+
+            Action <int> numPrint = (x) => {  Console.WriteLine(x); };
+            numPrint(5);
+
+            Action<int, float, int> sum = (x, y, z) => {
+                Console.WriteLine(x + y + z);
+            };
+            sum(1, 1.2f, 3);
 
         }
 
