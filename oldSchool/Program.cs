@@ -757,7 +757,7 @@ namespace oldSchool
             Thread.Sleep(1000);
             Console.WriteLine("Hello World 4");*/
 
-            new Thread(() => {
+            /*new Thread(() => {
                 Thread.Sleep(1000);
                 Console.WriteLine("Thread 1"); 
             }
@@ -773,7 +773,23 @@ namespace oldSchool
             new Thread(() => {
                 Thread.Sleep(1000);
                 Console.WriteLine("Thread 4");
-            }).Start();
+            }).Start();*/
+
+            //task Completion Source
+            var taskCompletionSource = new TaskCompletionSource<bool>();
+            var thread = new Thread(() =>
+            {
+                Console.WriteLine($"Thread number {Thread.CurrentThread.ManagedThreadId} started.");
+                Thread.Sleep(1000);
+                taskCompletionSource.TrySetResult(true);
+                Console.WriteLine($"Thread number{Thread.CurrentThread.ManagedThreadId} ended");
+            } );
+
+            //var taskBef = taskCompletionSource.Task.Result; //this one will block the program bc .Result waits for the task to be completed
+            //Console.WriteLine($"Before starting the thread, taske status {taskBef}");
+            thread.Start();
+            var taskAfter= taskCompletionSource.Task.Result;
+            Console.WriteLine($"Afetr starting the thread, task status {taskAfter}");
         }   
 
 
