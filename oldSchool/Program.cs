@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-
+using System.Reflection;
 namespace oldSchool
 {
     // ENUMS //
@@ -695,10 +695,18 @@ namespace oldSchool
             repository.Add(product);*/
 
             //Constraints for generic methods
-            Product product = new Product();
-            Product product2 = new Product();
-            bool res= Comparer.AreEqual(product, product2);
+            /* Product product = new Product();
+             Product product2 = new Product();
+             bool res= Comparer.AreEqual(product, product2);*/
 
+            //Reflections
+            string myName = "Nrmeen";
+            if (myName.GetType() == typeof(string))
+            {
+                Console.WriteLine(myName.GetType().ToString());
+            }
+            Type type = typeof(Repository<>);
+            Console.WriteLine(type.ToString());
 
 
         }
