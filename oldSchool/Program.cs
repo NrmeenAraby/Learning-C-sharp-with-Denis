@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Diagnostics;
 using System.Linq.Expressions;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 namespace oldSchool
 {
     // ENUMS //
@@ -776,7 +777,7 @@ namespace oldSchool
             }).Start();*/
 
             //task Completion Source
-            var taskCompletionSource = new TaskCompletionSource<bool>();
+            /*var taskCompletionSource = new TaskCompletionSource<bool>();
             var thread = new Thread(() =>
             {
                 Console.WriteLine($"Thread number {Thread.CurrentThread.ManagedThreadId} started.");
@@ -789,8 +790,40 @@ namespace oldSchool
             //Console.WriteLine($"Before starting the thread, taske status {taskBef}");
             thread.Start();
             var taskAfter= taskCompletionSource.Task.Result;
-            Console.WriteLine($"Afetr starting the thread, task status {taskAfter}");
-        }   
+            Console.WriteLine($"Afetr starting the thread, task status {taskAfter}");*/
+
+            //IsBackground
+            /* new Thread(() =>
+             {
+                 Thread.Sleep(1000);
+                 Console.WriteLine("Thread 4");
+             })
+             { IsBackground=true}.Start();*/
+
+            //new thread each time WHICH IS CPU OVERHEAD
+            /*Enumerable.Range(0, 100).ToList().ForEach((f) =>
+            {
+                new Thread(() =>
+                {
+                    Console.WriteLine($"Thread number {Thread.CurrentThread.ManagedThreadId} started.");
+                    Thread.Sleep(1000);
+                    Console.WriteLine($"Thread number{Thread.CurrentThread.ManagedThreadId} ended");
+                }).Start();
+            });*/
+
+            // ThreadPool         More efficient than new thread each time, background by default
+            Enumerable.Range(0, 100).ToList().ForEach((f) =>
+            {
+                ThreadPool.QueueUserWorkItem((obj) =>
+                {
+                    Console.WriteLine($"Thread number {Thread.CurrentThread.ManagedThreadId} started");
+                    Thread.Sleep(1000);
+                    Console.WriteLine($"Thread number{Thread.CurrentThread.ManagedThreadId} ended");
+                });
+            });
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+        }
 
 
 
