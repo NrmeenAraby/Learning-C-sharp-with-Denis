@@ -708,19 +708,30 @@ namespace oldSchool
             Type type = typeof(Repository<>);
             Console.WriteLine(type.ToString());*/
 
-            //Action<>      A generuc delegate that with no return value(void)
-            Action action = () => { Console.WriteLine("Hiii"); };
-            action();
+            //Action<>      A generic delegate that with no return value(void)
+            /* Action action = () => { Console.WriteLine("Hiii"); };
+             action();
 
-            Action <int> numPrint = (x) => {  Console.WriteLine(x); };
-            numPrint(5);
+             Action <int> numPrint = (x) => {  Console.WriteLine(x); };
+             numPrint(5);
 
-            Action<int, float, int> sum = (x, y, z) => {
-                Console.WriteLine(x + y + z);
+             Action<int, float, int> sum = (x, y, z) => {
+                 Console.WriteLine(x + y + z);
+             };
+             sum(1, 1.2f, 3);*/
+
+            //Func<>       A generic delegate that return a value and always its type is the last parameter
+            Func<int> f = () => { return 6; }; //this int is the tupe of teh return value(as there is just one so no input parameters here)
+            Console.WriteLine(f());
+
+            Func<int, int, string> sum = (x, y) => { 
+                return (x+y).ToString();
             };
-            sum(1, 1.2f, 3);
 
-        }
+            string res = sum(5, 1);
+            Console.WriteLine(res);
+        }   
+
 
 
 
