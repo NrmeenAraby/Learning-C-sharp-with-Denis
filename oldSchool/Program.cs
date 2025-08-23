@@ -738,7 +738,7 @@ namespace oldSchool
             var evenNums= nums.FindAll(isEven);*/
 
             //Management System Task
-            EmailTask emailTask = new EmailTask();
+            /*EmailTask emailTask = new EmailTask();
             emailTask.Recipient = "LiLi";
             emailTask.msg = "BlaBlaBla";
             ReportTask reportTask = new ReportTask();
@@ -746,7 +746,34 @@ namespace oldSchool
             TaskProcessor<EmailTask, string> taskProcessorEmail = new TaskProcessor<EmailTask, string>(emailTask);
             Console.WriteLine(taskProcessorEmail.Execute());
             TaskProcessor<ReportTask, string> taskProcessorReport = new TaskProcessor<ReportTask, string>(reportTask);
-            Console.WriteLine(taskProcessorReport.Execute());
+            Console.WriteLine(taskProcessorReport.Execute());*/
+
+            /// Threads ///
+            /*Console.WriteLine("Hello World 1");
+            Thread.Sleep(1000);
+            Console.WriteLine("Hello World 2");
+            Thread.Sleep(1000);
+            Console.WriteLine("Hello World 3");
+            Thread.Sleep(1000);
+            Console.WriteLine("Hello World 4");*/
+
+            new Thread(() => {
+                Thread.Sleep(1000);
+                Console.WriteLine("Thread 1"); 
+            }
+            ).Start();
+            new Thread(() => {
+                Thread.Sleep(1000);
+                Console.WriteLine("Thread 2");
+            } ).Start();
+            new Thread(() => {
+                Thread.Sleep(1000);
+                Console.WriteLine("Thread 3");
+            }).Start();
+            new Thread(() => {
+                Thread.Sleep(1000);
+                Console.WriteLine("Thread 4");
+            }).Start();
         }   
 
 
