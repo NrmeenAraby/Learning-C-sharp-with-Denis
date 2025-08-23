@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 namespace oldSchool
 {
     // ENUMS //
@@ -721,7 +722,7 @@ namespace oldSchool
              sum(1, 1.2f, 3);*/
 
             //Func<>       A generic delegate that return a value and always its type is the last parameter
-            Func<int> f = () => { return 6; }; //this int is the tupe of teh return value(as there is just one so no input parameters here)
+            /*Func<int> f = () => { return 6; }; //this int is the tupe of teh return value(as there is just one so no input parameters here)
             Console.WriteLine(f());
 
             Func<int, int, string> sum = (x, y) => { 
@@ -729,7 +730,13 @@ namespace oldSchool
             };
 
             string res = sum(5, 1);
-            Console.WriteLine(res);
+            Console.WriteLine(res);*/
+
+            //Predicate<>   A generic delegate that retuen onlyyy a bool value so its parameters only for input
+            Predicate<int> isEven = (x) => x % 2 == 0;
+            List<int> nums=new List<int>() { 1,2,3,4,5,6,7,8,9};
+            var evenNums= nums.FindAll(isEven);
+
         }   
 
 
