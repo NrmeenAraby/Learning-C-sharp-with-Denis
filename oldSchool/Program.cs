@@ -733,10 +733,20 @@ namespace oldSchool
             Console.WriteLine(res);*/
 
             //Predicate<>   A generic delegate that retuen onlyyy a bool value so its parameters only for input
-            Predicate<int> isEven = (x) => x % 2 == 0;
+            /*Predicate<int> isEven = (x) => x % 2 == 0;
             List<int> nums=new List<int>() { 1,2,3,4,5,6,7,8,9};
-            var evenNums= nums.FindAll(isEven);
+            var evenNums= nums.FindAll(isEven);*/
 
+            //Management System Task
+            EmailTask emailTask = new EmailTask();
+            emailTask.Recipient = "LiLi";
+            emailTask.msg = "BlaBlaBla";
+            ReportTask reportTask = new ReportTask();
+            reportTask.ReportName = "something";
+            TaskProcessor<EmailTask, string> taskProcessorEmail = new TaskProcessor<EmailTask, string>(emailTask);
+            Console.WriteLine(taskProcessorEmail.Execute());
+            TaskProcessor<ReportTask, string> taskProcessorReport = new TaskProcessor<ReportTask, string>(reportTask);
+            Console.WriteLine(taskProcessorReport.Execute());
         }   
 
 
