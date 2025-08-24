@@ -839,6 +839,13 @@ namespace oldSchool
             }
             thread2.Join();//Blocks only the calling (main) thread until thread2 ends 
             Console.WriteLine("Thread2 done");
+            if (thread1.IsAlive) {
+                Console.WriteLine("Thread 1 sTill doing stuffs");
+            }
+            else
+            {
+                Console.WriteLine("Thread 1 finished");
+            }
             Console.WriteLine("Main Thread ended");
 
 
@@ -849,7 +856,7 @@ namespace oldSchool
         {
             Console.WriteLine("Thread1Function started");
             Thread.Sleep(3000);
-            Console.WriteLine("Thread1Function ended");
+            Console.WriteLine("Thread1Function ended and Thread1 comin back to caller");
 
         }
         public static void Thread2Function() {
