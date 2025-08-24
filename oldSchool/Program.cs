@@ -812,7 +812,7 @@ namespace oldSchool
             });*/
 
             // ThreadPool         More efficient than new thread each time, background by default
-            Enumerable.Range(0, 100).ToList().ForEach((f) =>
+            /*Enumerable.Range(0, 100).ToList().ForEach((f) =>
             {
                 ThreadPool.QueueUserWorkItem((obj) =>
                 {
@@ -822,11 +822,40 @@ namespace oldSchool
                 });
             });
             Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            Console.ReadKey();*/
+
+            //pass functions to the thread and use join
+            Thread thread1 = new Thread(Thread1Function);
+            Thread thread2 = new Thread(Thread2Function);
+            thread1.Start();
+            thread2.Start();
+            if (thread1.Join(1000)) // blocks the calling (main) thread only 1 sec even if the thread1 hasn't ended yet 
+            {
+                Console.WriteLine("Thread1Function done");
+            }
+            else
+            {
+                Console.WriteLine("Thread1Function wasn't done within 1 sec");   // so the Main thread will complete its way
+            }
+            thread2.Join();//Blocks only the calling (main) thread until thread2 ends 
+            Console.WriteLine("Thread2 done");
+            Console.WriteLine("Main Thread ended");
+
+
         }
 
 
+        public static void Thread1Function()
+        {
+            Console.WriteLine("Thread1Function started");
+            Thread.Sleep(3000);
+            Console.WriteLine("Thread1Function ended");
 
+        }
+        public static void Thread2Function() {
+            Console.WriteLine("Thread2Function Started");
+      
+        }
 
         static bool IsMethodInDelegate(LogHandler OurDelegate,LogHandler method)
         {
